@@ -1,0 +1,14 @@
+{
+  "name": "Destroyable Entity",
+  "guid": "com.denariigames.destroyableentity",
+  "packageUrl": "https://github.com/denariigames/DestroyableEntity/raw/refs/heads/master/DestroyableEntity.unitypackage",
+  "version": "1.0.0",
+  "updateDate": "2025-11-15",
+  "author": {
+    "name": "Denarii Games",
+	"url": "https://x.com/WildMMO"
+  },
+  "category": "Gameplay",
+  "description": "Adds new HarvestableEntity type that awards only on death (as opposed to per hit). Useful for things like smashing barrels.",
+  "screenshot": "screenshot.png"
+}
