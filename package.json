@@ -1,5 +1,5 @@
 {
-  "isCore": true,
+  "isCore": "true",
   "name": "Destroyable Entity",
   "guid": "com.denariigames.destroyableentity",
   "packageUrl": "https://github.com/denariigames/DestroyableEntity/raw/refs/heads/master/DestroyableEntity.unitypackage",
