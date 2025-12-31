@@ -1,10 +1,9 @@
 {
-  "isCore": "true",
   "name": "Destroyable Entity",
-  "guid": "com.denariigames.destroyableentity",
+  "guid": "747d6332-3c21-47ff-a59c-333d7e93d4d8",
   "packageUrl": "https://github.com/denariigames/DestroyableEntity/raw/refs/heads/master/DestroyableEntity.unitypackage",
   "version": "1.0.0",
-  "updateDate": "2025-11-15",
+  "updateDate": "2025-12-31",
   "author": {
     "name": "Denarii Games",
 	"url": "https://x.com/WildMMO"
