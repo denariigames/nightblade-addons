@@ -1,6 +1,6 @@
 # Destroyable Entity
 
-![DestroyableEntity](https://raw.githubusercontent.com/denariigames/DestroyableEntity/refs/heads/master/screenshot.png)
+![DestroyableEntity](https://github.com/denariigames/nightblade-addons/blob/master/DestroyableEntity/screenshot.png)
 
 An addon for NightBlade MMO that adds new HarvestableEntity type that awards only on death (as opposed to per hit). Useful for things like smashing barrels.
 
