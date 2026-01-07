@@ -1,85 +1,90 @@
-![GMCommand-access](https://github.com/denariigames/BuildingEntityManager/assets/755461/2dbc71dc-9eab-41cf-ac37-9acf43e77cd9)
+# GMCommandExt
 
-Addon for [MMORPG Kit](https://assetstore.unity.com/packages/templates/systems/mmorpg-kit-2d-3d-survival-110188) replaces DefaultGMCommands with an enhanced implementation. 
+<img src="https://github.com/denariigames/BuildingEntityManager/assets/755461/2dbc71dc-9eab-41cf-ac37-9acf43e77cd9" alt="GMCommand-access" height="350">
 
-- Supports six levels of chat command access control from userLevel (0 = everyone, 1 = premium account, 2 = chat moderator, 3 = game moderator, 4 = admin, 5 = superadmin)
-- ~~Restricted commands (/ban, /kick, /kill, /mute, /warp_character) can optionally not apply to players of a higher level (ChatModerator cannot mute Admin)~~
-- Developers can easily extend and implement their own commands
+An addon for NightBlade MMO replaces DefaultGMCommands with an enhanced implementation. 
 
-Last update: Kit 1.88
+- supports six levels of chat command access control from userLevel column in the userlogin table (0 = everyone, 1 = premium account, 2 = chat moderator, 3 = game moderator, 4 = admin, 5 = superadmin)
+- developers can easily extend and implement their own commands
+- **(New)** command logging by User level
+
+### Usage
+
+1. reference DefaultGMCommandsExt in GameInstance GM Commands.
+2. modify command access on DefaultGMCommandsExt as required.
+3. modify userLevel field in userlogin table as required 
 
 ![GMCommandExt-config](https://github.com/denariigames/BuildingEntityManager/assets/755461/043fca0c-9ab8-4880-b57e-ba4d02aa82f2)
 
-### Setup
+### Logging
 
-1. Reference DefaultGMCommandsExt in GameInstance GM Commands.
+Commands can be logged by User Level. The log format is:
 
-2. Modify command access on DefaultGMCommandsExt as required.
+`[GMCommandExt] {System.DateTime.Now:yyyy-MM-dd HH:mm:ss}|{command.category}|{sender}|{chatMessage}`
 
-3. Modify userLevel field in userlogin table as required 
 
 ### Developers
 
-GMCommandExt implements a DevExtMethods plugin pattern. In your own addon, create a new file for a partial to class GMCommandExt for each command you wish to implement. There are four required sections to the partial.
+GMCommandExt implements a DevExtMethods plugin pattern. **Version 2.0.0 introduces an entirely new, streamlined pattern for creating commands. Any custom commands from prior versions will need to be modified.**
 
-1. Define the default access and the command string that will be recognized in chat.
+1. In your own addon, create a new file for a *partial to class GMCommandExt* for each command you wish to implement.
 ```
-[SerializeField] private PlayerLevel fooAccess = PlayerLevel.Admin;
-public const string fooCommand = "/foo";
-```
+using UnityEngine;
+using NightBlade.DevExtension;
 
-2. Implement the /help yourCommand response with a desciption and any command parameters required. Note that the detail logic is wrapped with a conditional against the helparg.
-```
-[DevExtMethods("HelpGMCommand")]
-protected void HelpGMCommand_foo(int userLevel)
+namespace NightBlade
 {
-	if (userLevel >= (int)fooAccess)
-		s_responseGmCommand += fooCommand + "  ";
-}
-
-[DevExtMethods("HelpGMCommandDetail")]
-protected void HelpGMCommandDetail_foo(string helpArg, int userLevel)
-{
-	if (helpArg.Equals(fooCommand.ToLower()) || fooCommand.ToLower().Equals("/" + helpArg))
+	public partial class GMCommandExt
 	{
-		if (userLevel >= (int)fooAccess)
-			s_responseGmCommand = "<color=white>Describe your command</color>\n/foo";
-		else
-			s_responseGmCommand = "<color=red>You do not have access to this command</color>";
 	}
 }
 ```
 
-3. Return true for IsGMCommand and CanUseGMCommand only in the scope of your command. Note that the logic is wrapped with a conditional against the command.
+2. Define the default *PlayerLevel* access for the command.
 ```
-[DevExtMethods("IsGMCommand")]
-protected void IsGMCommand_foo(string command)
-{
-	if (command.Equals(fooCommand.ToLower()))
-	{
-		b_isGmCommand = true;
-	}
-}
+[SerializeField] private PlayerLevel myCommandAccess = PlayerLevel.Admin;
+```
 
-[DevExtMethods("CanUseGMCommand")]
-protected void CanUseGMCommand_foo(string command, int userLevel)
+3. Implement the *RegisterCommand* DevExtMethod.
+```
+[DevExtMethods("RegisterCommand")]
+private void GMCommand__myCommand()
 {
-	if (command.Equals(fooCommand.ToLower()))
-	{
-		if (userLevel >= (int)fooAccess)
-			b_canUseGMCommand = true;
-	}
+	AddGMCommand(
+		"my_command", //string that will be recognized as your command, note the prefix slash is not included
+		myCommandAccess, //reference to the PlayerLevel field above
+		"This description is shown in /help my_command", //description of your command
+		"{characterName} {item_id} {optional: amount}", //arguments shown below description of your command
+		"Economy" //category (see below)
+	);
 }
 ```
 
-4. Execute your command logic only in the scope of your command. Note that the logic is wrapped with a conditional against the command. See the DefaultCommands for more examples.
+4. Implement your command handler method. Note that it is magic-named and the method must follow the naming convention.
 ```
-[DevExtMethods("HandleGMCommand")]
-protected void HandleGMCommand_foo(string sender, BasePlayerCharacterEntity characterEntity, string command, string[] data)
+protected string HandleGMCommand__myCommand(string sender, BasePlayerCharacterEntity characterEntity, string[] data)
 {
-	if (command.Equals(fooCommand.ToLower()))
+	string response = "<color=red>You do not have access to this command</color>";
+
+	//perform any data length checks depending on your arguments
+	if (data.Length == 2)
 	{
-		s_responseGmCommand = $"<color=green>Foo bar</color>";
+		//perform your command logic and update response
+		response = $"<color=green>Command did the thing</color>";
 	}
+
+	return response;
 }
 ```
+
+### Command Categories
+
+Commands are grouped in categories and the default categories are:
+
+- General
+- Moderation
+- Player
+- Economy
+- Server
+
+You are free to add your own category name if you want to group your custom commands together.
