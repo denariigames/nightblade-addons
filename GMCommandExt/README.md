@@ -16,6 +16,8 @@ An addon for NightBlade MMO replaces default DefaultGMCommands with a more flexi
 
 - **Command Logging:** Logs commands filtered by user level for better moderation and auditing.
 
+- **Data Sanitzation:** Set maximum amount for exp_rate, gold_rate, give_gold, gold, level, skillpoint and statpoint commands.
+
 ![GMCommandExt-config](https://github.com/denariigames/nightblade-addons/blob/master/GMCommandExt/gmcommanext-perms.png?raw=true)
 
 ### Usage
