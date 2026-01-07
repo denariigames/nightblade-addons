@@ -30,8 +30,7 @@ To integrate GMCommandExt into your NightBlade MMO:
 
 Commands can be logged by User Level to help track usage for security and debugging purposes. The log format is:
 
-`[GMCommandExt] {System.DateTime.Now:yyyy-MM-dd HH:mm:ss}|{command.category}|{sender}|{chatMessage}`
-
+`{System.DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")}|GMCommand|{sender}|{command.category}|{commandKey}|{chatMessage}`
 
 ### Developers
 
