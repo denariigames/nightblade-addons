@@ -1,6 +1,6 @@
 # GMCommandExt
 
-<img src="https://github.com/denariigames/BuildingEntityManager/assets/755461/2dbc71dc-9eab-41cf-ac37-9acf43e77cd9" alt="GMCommand-access" height="350">
+<img src="https://github.com/denariigames/nightblade-addons/blob/master/GMCommandExt/screenshot.png?raw=true" alt="GMCommand-access" height="350">
 
 An addon for NightBlade MMO replaces default DefaultGMCommands with a more flexible and extensible version, featuring granular access control, easy custom command development, and command logging.
 
@@ -16,15 +16,16 @@ An addon for NightBlade MMO replaces default DefaultGMCommands with a more flexi
 
 - **Command Logging:** Logs commands filtered by user level for better moderation and auditing.
 
+![GMCommandExt-config](https://github.com/denariigames/nightblade-addons/blob/master/GMCommandExt/gmcommanext-perms.png?raw=true)
+
 ### Usage
 
 To integrate GMCommandExt into your NightBlade MMO:
 
-1. in your InitScene, edit the `GameInstance` GameObject and reference `DefaultGMCommandsExt` for GM Commands.
-2. adjust command access levels directly on `DefaultGMCommandsExt` as needed (or make your own).
-3. update the userLevel field in the userlogin table for individual accounts.
-
-![GMCommandExt-config](https://github.com/denariigames/BuildingEntityManager/assets/755461/043fca0c-9ab8-4880-b57e-ba4d02aa82f2)
+1. create your own GMCommandsExt scriptable object with `Create > Create GameData > GMCommandExt` (default may be overridden on addon updates)
+2. adjust command access levels directly on your `GMCommandsExt` as needed
+3. in your InitScene, edit the `GameInstance` GameObject and reference your `GMCommandsExt` for GM Commands
+4. update the userLevel field in the userlogin table for individual accounts
 
 ### Logging
 
