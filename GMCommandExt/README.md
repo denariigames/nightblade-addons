@@ -1,6 +1,6 @@
 # GMCommandExt
 
-<img src="https://github.com/denariigames/nightblade-addons/blob/master/GMCommandExt/screenshot.png?raw=true" alt="GMCommand-access" height="350">
+<img src="https://github.com/denariigames/nightblade-addons/blob/master/GMCommandExt/dist/screenshot.png?raw=true" alt="GMCommand-access" height="350">
 
 An addon for NightBlade MMO replaces default DefaultGMCommands with a more flexible and extensible version, featuring granular access control, easy custom command development, and command logging.
 
@@ -18,7 +18,7 @@ An addon for NightBlade MMO replaces default DefaultGMCommands with a more flexi
 
 - **Data Sanitzation:** Set maximum amount for exp_rate, gold_rate, give_gold, gold, level, skillpoint and statpoint commands.
 
-![GMCommandExt-config](https://github.com/denariigames/nightblade-addons/blob/master/GMCommandExt/gmcommanext-perms.png?raw=true)
+![GMCommandExt-config](https://github.com/denariigames/nightblade-addons/blob/master/GMCommandExt/gmcommandext-perms.png?raw=true)
 
 ### Usage
 

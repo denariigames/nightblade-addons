@@ -1,7 +1,7 @@
 {
   "name": "GMCommandExt",
   "guid": "7144b0e7-6ebc-4f09-9c6a-b7f19db309fb",
-  "packageUrl": "https://github.com/denariigames/nightblade-addons/raw/refs/heads/master/GMCommandExt/GMCommandExt.unitypackage",
+  "packageUrl": "https://github.com/denariigames/nightblade-addons/raw/refs/heads/master/GMCommandExt/dist/GMCommandExt.unitypackage",
   "version": "2.0.0",
   "updateDate": "2026-01-07",
   "category": "Tools",
