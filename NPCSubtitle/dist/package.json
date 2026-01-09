@@ -1,7 +1,7 @@
 {
   "name": "NPC Subtitle",
   "guid": "64a9de94-fd57-4448-9cbf-25358a487846",
-  "packageUrl": "https://raw.githubusercontent.com/denariigames/nightblade-addons/refs/heads/master/NPCSubtitle/dist/package.json",
+  "packageUrl": "https://github.com/denariigames/nightblade-addons/raw/refs/heads/master/NPCSubtitle/dist/NPCSubtitle.unitypackage",
   "version": "1.0.0",
   "updateDate": "2025-12-29",
   "author": {
