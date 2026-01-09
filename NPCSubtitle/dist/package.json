@@ -1,0 +1,14 @@
+{
+  "name": "NPC Subtitle",
+  "guid": "64a9de94-fd57-4448-9cbf-25358a487846",
+  "packageUrl": "https://raw.githubusercontent.com/denariigames/nightblade-addons/refs/heads/master/NPCSubtitle/dist/package.json",
+  "version": "1.0.0",
+  "updateDate": "2025-12-29",
+  "author": {
+    "name": "Denarii Games",
+	"url": "https://x.com/WildMMO"
+  },
+  "category": "NPCs",
+  "description": "Adds subtitle field to NPC entities. Useful if you want to show a role below the name.",
+  "screenshot": "screenshot.png"
+}
