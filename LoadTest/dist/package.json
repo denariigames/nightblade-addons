@@ -1,0 +1,14 @@
+{
+  "name": "Load Test Base Scene",
+  "guid": "73a74142-a905-479c-b411-333ca362bc01",
+  "packageUrl": "https://github.com/denariigames/nightblade-addons/raw/refs/heads/master/LoadTest/dist/LoadTest.unitypackage",
+  "version": "1.0.0",
+  "updateDate": "2026-01-08",
+  "category": "MMO",
+  "description": "Load Test base scene and Build Profile.\n\nBase scene has 25 spawners that spawn 500 monsters and 500 harvestable entities on a 500x500 terrain.\nBuild Profile LoadTest-Windows automatically builds with just the LoadTest scene.",
+  "author": {
+    "name": "Denarii Games",
+    "url": "https://x.com/WildMMO"
+  },
+  "screenshot": "screenshot.png"
+}
