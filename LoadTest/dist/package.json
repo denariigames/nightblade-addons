@@ -10,7 +10,5 @@
     "name": "Denarii Games",
     "url": "https://x.com/WildMMO"
   },
-  "screenshot": "screenshot.png",
-  "patchFile": "some.patch",
-  "dependencies": ["7144b0e7-6ebc-4f09-9c6a-b7f19db309fb"]
+  "screenshot": "screenshot.png"
 }
