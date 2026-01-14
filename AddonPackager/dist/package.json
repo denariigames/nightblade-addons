@@ -3,7 +3,7 @@
   "name": "Addon Packager",
   "guid": "60f9beac-2b71-469f-8a18-7aaa2ca06e6b",
   "packageUrl": "https://github.com/denariigames/nightblade-addons/raw/refs/heads/master/AddonPackager/dist/AddonPackager.unitypackage",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "updateDate": "2026-01-14",
   "category": "Tools",
   "description": "Addon Packager is a custom Unity Editor tool designed for community contributions. It simplifies the process of packaging your addons by:\n\n- Exporting your addon folder as a `.unitypackage` with the required guid file\n- Automatically generating a properly formatted `package.json` manifest\n\nThis makes it incredibly easy to share your addons with the NightBlade community.",
