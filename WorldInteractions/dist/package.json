@@ -1,0 +1,11 @@
+{
+  "name": "World Interactions",
+  "guid": "618f6621-f51f-4326-b0a0-54323e23afe3",
+  "packageUrl": "https://github.com/denariigames/nightblade-addons/raw/refs/heads/master/WorldInteractions/dist/WorldInteractions.unitypackage",
+  "version": "1.0.0",
+  "updateDate": "2026-01-26",
+  "category": "Gameplay",
+  "description": "Framework for non-networked, world objects that support targeting, movement, stopping, and interaction. Every BaseGameEntity has networking overhead. World Interaction Targets allows for massive quantity of NPCs, harvestables, etc where client-only interaction is desirable.",
+  "author": "Riryan",
+  "screenshot": "screenshot.png"
+}
